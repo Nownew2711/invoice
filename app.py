@@ -3,25 +3,22 @@ from pdf2image import convert_from_path
 import pytesseract
 import pandas as pd
 import re
-import logging
 import os
+print("Starting app...")
 
 def process_pdf(file):
     try:
         # Check if the file is a PDF
         if not file.name.lower().endswith('.pdf'):
-            logging.warning("Uploaded file is not a PDF.")
             return "Error: Uploaded file is not a PDF. Please upload a PDF file.", None
         
         images = convert_from_path(file.name)
         full_text = ""
         for i, img in enumerate(images):
             text = pytesseract.image_to_string(img)
-            logging.debug(f"Text extracted from image {i+1}: {text[:100]}...")
             full_text += text + "\n"
         
         if not full_text.strip():
-            logging.error("No text could be extracted from the PDF.")
             return "Error: Unable to extract text. The PDF might be blank or incorrectly formatted.", None
         
         required_keywords = ['invoice', 'order no', 'invoice date', 'supplier name', 'warehouse id']
