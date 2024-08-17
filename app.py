@@ -4,6 +4,7 @@ import pytesseract
 import pandas as pd
 import re
 import logging
+import os
 
 def process_pdf(file):
     try:
@@ -108,3 +109,8 @@ iface = gr.Interface(
 )
 
 iface.launch()
+
+if __name__ == '__main__':
+    import os
+    port = int(os.environ.get('PORT', 5000))
+    iface.launch(server_name="0.0.0.0", server_port=port)
