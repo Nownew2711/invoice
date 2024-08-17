@@ -289,8 +289,6 @@ supafunc==0.3.3
 sympy==1.9
 systemd-python==234
 tabula-py==2.9.3
-# Editable install with no version control (taol-utils==0.1)
--e /home/abinaya/Transfer/Workspace/lambda_layers/taol_utils/python
 tenacity==8.2.3
 tensorboard==2.12.3
 tensorboard-data-server==0.7.2
