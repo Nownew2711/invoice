@@ -1,0 +1,4 @@
+gradio
+pdf2image
+pytesseract
+pandas
