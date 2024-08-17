@@ -37,7 +37,6 @@ click-log==0.4.0
 cloudpickle==2.2.1
 colorama==0.4.4
 comm==0.1.2
-command-not-found==0.3
 contourpy==1.0.7
 cryptography==42.0.8
 cupshelpers==1.0
