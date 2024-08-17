@@ -84,8 +84,6 @@ grpcio==1.64.0
 gspread==5.7.2
 gspread-dataframe==3.3.0
 gspread-formatting==1.1.2
-# Editable Git install with no remote (gspread-methods==0.1)
--e /home/abinaya/Transfer/Workspace/gspread_methods
 gyp==0.1
 h11==0.14.0
 h5py==3.11.0
