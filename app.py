@@ -4,6 +4,7 @@ import pytesseract
 import pandas as pd
 import re
 import os
+import gc
 print("Starting app...")
 
 def process_pdf(file):
@@ -17,6 +18,8 @@ def process_pdf(file):
         for i, img in enumerate(images):
             text = pytesseract.image_to_string(img)
             full_text += text + "\n"
+            del img  # Remove the image from memory
+            gc.collect()  # Force garbage collection
         
         if not full_text.strip():
             return "Error: Unable to extract text. The PDF might be blank or incorrectly formatted.", None
